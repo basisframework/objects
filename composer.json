@@ -1,4 +1,15 @@
 {
+	"name": "basis/objects",
+    "description": "A collection of data objects and supporting classes",
+
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Jeffrey",
+            "email": "alex@alexjeffrey.me"
+        }
+    ],
+
 	"require": {
 		"php": ">=5.4.0"
 	},
