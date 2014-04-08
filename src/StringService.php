@@ -1,5 +1,6 @@
 <?php
 namespace Basis\Objects;
+use Basis\Objects\Stringlike;
 
 class StringService {
 	private $encoding;
@@ -10,7 +11,7 @@ class StringService {
 
 	/**
 	 * Convert a string to uppercase
-	 * @param string $str
+	 * @param string|Stringlike $str
 	 * @return string
 	 */
 	function toUpper($str) {
@@ -23,7 +24,7 @@ class StringService {
 
 	/**
 	 * Convert a string to lowercase
-	 * @param string $str
+	 * @param string|Stringlike $str
 	 * @return string
 	 */
 	function toLower($str) {
@@ -36,7 +37,7 @@ class StringService {
 
 	/**
 	 * Convert all underscores in a string to spaces
-	 * @param string $str
+	 * @param string|Stringlike $str
 	 * @return string
 	 */
 	function toSpaced($str) {
@@ -49,7 +50,7 @@ class StringService {
 
 	/**
 	 * Convert an underscored or spaced string to camelcase
-	 * @param string $str
+	 * @param string|Stringlike $str
 	 * @return string
 	 */
 	function toCamel($str) {
