@@ -1,5 +1,5 @@
 <?php
-namespace Basis\Objects\Types;
+namespace Basis\Objects;
 
 interface Stringlike {
 

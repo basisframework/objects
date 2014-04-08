@@ -2,6 +2,7 @@
 namespace Basis\Objects;
 
 class StringService {
+	private $encoding;
 
 	public function __construct($encoding = 'UTF-8') {
 		$this->encoding = $encoding;
@@ -13,7 +14,7 @@ class StringService {
 	 * @return string
 	 */
 	function toUpper($str) {
-		if(is_a($str, 'Basis\Objects\Types\Stringlike')) {
+		if(is_a($str, 'Basis\Objects\Stringlike')) {
 			$str = $str->toString();
 		}
 
@@ -26,7 +27,7 @@ class StringService {
 	 * @return string
 	 */
 	function toLower($str) {
-		if(is_a($str, 'Basis\Objects\Types\Stringlike')) {
+		if(is_a($str, 'Basis\Objects\Stringlike')) {
 			$str = $str->toString();
 		}
 
@@ -39,7 +40,7 @@ class StringService {
 	 * @return string
 	 */
 	function toSpaced($str) {
-		if(is_a($str, 'Basis\Objects\Types\Stringlike')) {
+		if(is_a($str, 'Basis\Objects\Stringlike')) {
 			$str = $str->toString();
 		}
 

@@ -1,7 +1,7 @@
 <?php
 require dirname(__DIR__) . '/src/StringService.php';
 require dirname(__DIR__) . '/vendor/autoload.php';
-require dirname(__DIR__) . '/src/Types/Stringlike.php';
+require dirname(__DIR__) . '/src/Stringlike.php';
 require __DIR__ . '/fixtures/MockStringlike.php';
 
 class StringServiceTest extends PHPUnit_Framework_TestCase {

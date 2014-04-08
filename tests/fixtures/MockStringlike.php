@@ -1,5 +1,5 @@
 <?php
-use Basis\Objects\Types\Stringlike;
+use Basis\Objects\Stringlike;
 
 class MockStringlike implements Stringlike {
 	private $str;
