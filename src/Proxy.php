@@ -12,7 +12,7 @@ class Proxy {
 		return isset($this->target->$name);
 	}
 
-	public function &__get($name) {
+	public function __get($name) {
 		return $this->target->$name;
 	}
 
