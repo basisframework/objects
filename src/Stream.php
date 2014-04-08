@@ -1,21 +1,11 @@
 <?php
 namespace Basis\Objects;
 
-class Stream {
-	private $data = '';
+interface Stream {
 
-	public function write($data) {
-		$this->data .= $data;
-	}
-
-	public function read($bytes) {
-		if(strlen($this->data) < $bytes) {
-			return NULL;
-		}
-
-		$data = substr($this->data, 0, $bytes);
-		$this->data = substr($this->data, $bytes);
-		return $data;
-	}
+	/**
+	 * Closes the stream
+	 */
+	public function close();
 	
 };

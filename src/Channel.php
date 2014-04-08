@@ -20,8 +20,8 @@ class Channel {
 	 * @throws ChannelException when the message is not of type $this->type
 	 */
 	public function send($message) {
-		if(gettype($message) != $this->type && !is_a($message, $this->type)) {
-			throw new ChannelException(sprintf('Tried to push message of type "%s" onto channel of type "%s"', get_class($message) ?: gettype($message), $this->type));
+		if(gettype($message) != $this->type && !(is_object($message) && is_a($message, $this->type))) {
+			throw new ChannelException(sprintf('Tried to push message of type "%s" onto channel of type "%s"', is_object($message) ? get_class($message) : gettype($message), $this->type));
 		}
 
 		if($this->receive_handlers) {
