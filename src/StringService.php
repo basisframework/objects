@@ -10,16 +10,26 @@ class StringService {
 	}
 
 	/**
+	 * Convert a value to a string
+	 * @param $val
+	 * @return string
+	 */
+	public function cast($val) {
+		if(is_object($val) && is_a($val, 'Basis\Objects\Stringlike')) {
+			$val = $val->toString();
+		}
+
+		return (string)$val;
+	}
+
+	/**
 	 * Convert a string to uppercase
 	 * @param string|Stringlike $str
 	 * @return string
 	 */
 	function toUpper($str) {
-		if(is_a($str, 'Basis\Objects\Stringlike')) {
-			$str = $str->toString();
-		}
-
-		return mb_strtoupper((string)$str, $this->encoding);
+		$str = $this->cast($str);
+		return mb_strtoupper($str, $this->encoding);
 	}
 
 	/**
@@ -28,11 +38,8 @@ class StringService {
 	 * @return string
 	 */
 	function toLower($str) {
-		if(is_a($str, 'Basis\Objects\Stringlike')) {
-			$str = $str->toString();
-		}
-
-		return mb_strtolower((string)$str, $this->encoding);
+		$str = $this->cast($str);
+		return mb_strtolower($str, $this->encoding);
 	}
 
 	/**
@@ -41,11 +48,8 @@ class StringService {
 	 * @return string
 	 */
 	function toSpaced($str) {
-		if(is_a($str, 'Basis\Objects\Stringlike')) {
-			$str = $str->toString();
-		}
-
-		return str_replace('_', ' ', (string)$str);
+		$str = $this->cast($str);
+		return str_replace('_', ' ', $str);
 	}
 
 	/**
@@ -54,6 +58,7 @@ class StringService {
 	 * @return string
 	 */
 	function toCamel($str) {
+		$str = $this->cast($str);
 		$str = $this->toLower($this->toSpaced($str));
 
 		// Convert to title case and remove spaces
